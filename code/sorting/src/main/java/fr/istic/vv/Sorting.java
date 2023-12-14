@@ -15,9 +15,9 @@ public class Sorting {
                     swapped = true;
                 }
             }
-        } while (!swapped);
+        } while (swapped);
 
-        return null; 
+        return array; 
     }
 
     private static <T> void swap(T[] array, int i, int j) {
@@ -67,11 +67,9 @@ public class Sorting {
             T[] left = Arrays.copyOfRange(array, 0, mid);
             T[] right = Arrays.copyOfRange(array, mid, n);
 
-            // Recursively sort each half
             mergeSortRec(left, comparator);
             mergeSortRec(right, comparator);
 
-            // Merge the sorted halves
             merge(array, comparator, left, right);
         }
     }
